@@ -21,28 +21,28 @@
 #**
 #*************************************************************************************************
 
-__demoMode                  = True # disable if running from real data
+__demoMode                  = False # disable if running from real data
 
 # NOTE: SPECTRUM and IRF (or mono-exponential decay spectrum) data vectors require equal length!
 
 __roi_start                 = 0
-__roi_end                   = 7400 # Note: number of channels is internally limited by CONTIN to <= 4000, so adjust the '__binFactor' in order to fit the given number of channels into this range
+__roi_end                   = 2000 # Note: number of channels is internally limited by CONTIN to <= 4000, so adjust the '__binFactor' in order to fit the given number of channels into this range
 
 # file path (and name) to the SPECTRUM data:
 
 __usingRefSpectrum          = True # if set to FALSE the '__irfXXX' related parameters are considered
 
-__filePathSpec              = 'testData/spectrum_10ps.dat'
+__filePathSpec              = 'Data\\run1.dat'
 __specDataDelimiter         = '\t'
 
 # file path (and name) to the IRF data:
 
-__filePathRefOrIRFSpec      = 'testData/ref_10ps.dat'
+__filePathRefOrIRFSpec      = 'Data\\240123-22-58_T1.dat'
 __refDataDelimiter          = '\t'
 
 # define the number of rows to be skipped during the import of the data (e.g. for ignoring the header entries):
 
-__skipRows                  = 5;
+__skipRows                  = 4;
 
 # fixed mono-decay component in units of picoseconds [ps] (1/lambda = tau):
 
@@ -65,10 +65,10 @@ __gridPoints                = 100    # 10 ... 100 Note: this value is internally
 
 # channel/bin resolution [ps]:
 
-__channelResolutionInPs     = 10. # >= 10 ... Note: this value is internally limited by CONTIN. If lower, increase '__binFactor' to fit into this range
-__binFactor                 = 2   # Note: number of channels is internally limited by CONTIN to <= 4000, so adjust the '__binFactor' in order to fit the given number of channels into this range
+__channelResolutionInPs     = 30. # >= 10 ... Note: this value is internally limited by CONTIN. If lower, increase '__binFactor' to fit into this range
+__binFactor                 = 1   # Note: number of channels is internally limited by CONTIN to <= 4000, so adjust the '__binFactor' in order to fit the given number of channels into this range
 
 # background estimation/calculation region:
 
-__bkgrd_startIndex          = 6500;
-__bkgrd_count               = 900; # number of channels with respect to the 'startIndex'
+__bkgrd_startIndex          = 1000;
+__bkgrd_count               = 600; # number of channels with respect to the 'startIndex'
